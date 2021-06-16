@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+}
+.navbar-nav {
+  display: flex;
+  justify-content: flex-start;
+}
+.navbar-collapse {
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+.form-inline {
+  display: flex;
+}
+.form-inline input {
+  margin-right: 30px;
+}
