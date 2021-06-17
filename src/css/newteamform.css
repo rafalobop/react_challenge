@@ -1,0 +1,68 @@
+.modal-content {
+  background: rgb(200, 60, 30);
+  box-shadow: 3px 3px 5px #000, inset 2px 2px 5px #fff;
+  border-radius: 20px;
+  margin-top: 80px;
+}
+.modal-header {
+  border-bottom: 0.5px solid #ccc;
+}
+.modal-header .modal-title {
+  width: 100%;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px 5px #d1d1d1;
+}
+.modal-body .newteam-form {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.modal-body .newteam-form label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.modal-body .newteam-form input {
+  text-align: center;
+  background: rgba(60, 60, 60, 0.5);
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #fff;
+}
+.modal-footer {
+  border: none;
+  width: 100%;
+}
+.modal-footer button {
+  width: 60%;
+  margin: 0px auto;
+  background: rgba(60, 60, 60, 0.5);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #fff;
+}
+.modal-footer button:hover {
+  background: rgba(120, 120, 120, 0.7);
+  color: #202020;
+  transition: 0.4s;
+}
+.error {
+  background: #fff;
+  width: 80%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 20px;
+  text-align: center;
+  color: #f00;
+  font-weight: 600;
+}
