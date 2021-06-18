@@ -40,9 +40,9 @@
   border: none;
   width: 100%;
 }
-.modal-footer button {
+.modal-body .newteam-form button {
   width: 60%;
-  margin: 0px auto;
+  margin: 20px auto;
   background: rgba(60, 60, 60, 0.5);
   border: none;
   padding: 10px;
@@ -51,7 +51,7 @@
   border-radius: 20px;
   color: #fff;
 }
-.modal-footer button:hover {
+.modal-body .newteam-form button:hover {
   background: rgba(120, 120, 120, 0.7);
   color: #202020;
   transition: 0.4s;

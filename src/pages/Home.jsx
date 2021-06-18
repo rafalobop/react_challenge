@@ -4,13 +4,29 @@ import '../css/home.css';
 import NewTeamForm from '../Components/NewTeamForm';
 
 const Home = () => {
-  const [myteamActive, setMyteamActive] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
-  const toggle = () => setOpenModal(!openModal);
   const [team, setTeam] = useState({
     name: '',
     characters: [],
   });
+  let equipoInicial = JSON.parse(localStorage.getItem('listaEquipos'));
+  if (!equipoInicial) {
+    equipoInicial = [];
+  }
+  const [listaEquipos, setListaEquipos] = useState(equipoInicial);
+  const [myteamActive, setMyteamActive] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const toggle = () => setOpenModal(!openModal);
+
+  useEffect(() => {
+    if (listaEquipos) {
+      localStorage.setItem('listaEquipos', JSON.stringify(listaEquipos));
+    } else {
+      localStorage.setItem('listaEquipos', JSON.stringify([]));
+    }
+  }, []);
+  const crearEquipo = (team) => {
+    setListaEquipos([...listaEquipos, team]);
+  };
 
   return (
     <>
@@ -28,6 +44,7 @@ const Home = () => {
               setOpenModal={setOpenModal}
               team={team}
               setTeam={setTeam}
+              crearEquipo={crearEquipo}
             />
           </div>
         ) : (
