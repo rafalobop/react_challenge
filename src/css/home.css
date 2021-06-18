@@ -1,7 +1,8 @@
 .container {
   background: rgba(240, 50, 30, 0.8);
   margin: 40px auto;
-  width: 90%;
+  width: 96%;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: 3px 3px 6px #000, inset 3px 3px 5px #fff;
 }

@@ -13,12 +13,12 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
-  text-shadow: 2px 2px 5px #d1d1d1;
 }
 .modal-body .newteam-form {
   display: flex;
   flex-direction: column;
   border: none;
+  width: 100%;
 }
 .modal-body .newteam-form label {
   color: #fff;
@@ -28,6 +28,7 @@
 }
 .modal-body .newteam-form input {
   text-align: center;
+  width: 100%;
   background: rgba(60, 60, 60, 0.5);
   border: none;
   padding: 5px;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import '../css/newteamform.css';
 import uuid from 'uuid/dist/v4';
 import swal from 'sweetalert';
@@ -21,7 +21,6 @@ const NewTeamForm = ({
   const [newTeam, setNewTeam] = useState(starterTeam);
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     setTeam({
       ...team,
       [e.target.name]: e.target.value,
@@ -40,6 +39,11 @@ const NewTeamForm = ({
     setError(false);
     team.id = uuid();
     crearEquipo(team);
+    swal({
+      title: 'Listo!',
+      text: 'Equipo Creado!',
+      icon: 'success',
+    });
     setTeam({
       name: '',
       characters: [],

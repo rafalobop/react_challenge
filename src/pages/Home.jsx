@@ -2,8 +2,28 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/home.css';
 import NewTeamForm from '../Components/NewTeamForm';
-
+import MyTeam from '../Components/MyTeam';
+import { getCharacters } from '../helpers/rutaHeroes';
 const Home = () => {
+  const [characters, setCharacters] = useState({
+    data: [],
+    loading: true,
+  });
+
+  const [inputValue, setInputValue] = useState('');
+  useEffect(() => {
+    getCharacters().then((character) => {
+      setCharacters({
+        data: character,
+        loading: false,
+      });
+    });
+  }, []);
+
+  const characterData = characters.data.map((char) => {
+    console.log(char);
+    return char;
+  });
   const [team, setTeam] = useState({
     name: '',
     characters: [],
@@ -26,8 +46,10 @@ const Home = () => {
   }, []);
   const crearEquipo = (team) => {
     setListaEquipos([...listaEquipos, team]);
+    console.log(team);
+    setMyteamActive(true);
   };
-
+  console.log(team.name);
   return (
     <>
       <Navbar />
@@ -48,7 +70,16 @@ const Home = () => {
             />
           </div>
         ) : (
-          <h2>Mi equipo</h2>
+          <div>
+            <MyTeam
+              listaEquipos={listaEquipos}
+              team={team}
+              setTeam={setTeam}
+              characterData={characterData}
+              characters={characters}
+              setCharacters={setCharacters}
+            />
+          </div>
         )}
       </div>
     </>
